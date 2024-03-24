@@ -70,7 +70,6 @@ Runway_activity Runway::activity(int time, Plane &moving)
 }
 
 // Implementation to return total number of activities
-// Landing operations
 int Runway::getNumLandRequests() const {
    return num_land_requests;
 }
@@ -90,7 +89,11 @@ int Runway::getNumLandRefused() const {
 int Runway::getLandWait() const {
    return land_wait;
 }
-// Takeoff operations
+
+int Runway::getQueueLandSize() const {
+   return landing_queue.size();
+}
+
 int Runway::getNumTakeoffRequests() const {
    return num_takeoff_requests;
 }
@@ -111,15 +114,19 @@ int Runway::getTakeoffWait() const {
    return takeoff_wait;
 }
 
-// Method to access idle time
 int Runway::getIdleTime() const {
    return idle_time;
 }
 
-// Definition of the << operator overload for the Runway class
+int Runway::getQueueTakeoffSize() const {
+   return takeoff_queue.size();
+}
+
+// Definition of the << operator overload for the Runway class to print statistics
 std::ostream& operator<<(std::ostream& os, const Runway& runway) {
-   os << "Total land requests: " << runway.getNumLandRequests() << std::endl;
-   os << "Total takeoff requests: " << runway.getNumTakeoffRequests() << std::endl;
+   os << "Total landings: " << runway.getNumLandings() << std::endl;
+   os << "Total takeoffs: " << runway.getNumTakeoffs() << std::endl;
+
    // Add other statistics as needed
    return os;
 }

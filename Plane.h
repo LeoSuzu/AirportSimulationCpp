@@ -6,6 +6,7 @@
 #define PLANE_H
 
 #include "Utility.h"
+#include "Random.h"
 
 enum Plane_status {null, arriving, departing};
 
@@ -22,6 +23,8 @@ private:
    int flt_num;
    int clock_start;
    Plane_status state;
+   Random random;
+   int fuel;
 };
 
 

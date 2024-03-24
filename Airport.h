@@ -7,7 +7,7 @@
 #define AIRPORT_H
 
 #include "Runway.h"
-#include "Plane.h" // Include Plane class
+#include "Plane.h"
 #include "Utility.h"
 #include "Random.h"
 
@@ -18,24 +18,32 @@ public:
     void airport_small();
     void airport_medium_fixed();
     void airport_medium_flexible();
-    // void airport_large();
+    void airport_large();
 
     static void handleRunwayActivity(Runway *runway, int current_time, int &flight_number, int runway_number);
+    void initialize(int version);
 
 private:
-    // Fixed values for testing
-    static constexpr int end_time_fixed = 1500;             // Example fixed value
+
+    /* Testing only
+    static constexpr int end_time_fixed = 2000;             // Example fixed value
     static constexpr int queue_limit_fixed = 10;            // Example fixed value
     static constexpr double arrival_rate_fixed = 0.6;       // Example fixed value
-    static constexpr double departure_rate_fixed = 0.3;     // Example fixed value
+    static constexpr double departure_rate_fixed = 0.4;     // Example fixed value
+    */
+
+    Utility lib_random;
+    Random random;
 
     Runway* runway1;
     Runway* runway2;
     Runway* runway3;
-    Utility lib_random;
+
 
     int end_time;
     int queue_limit;
+    double arrival_rate;
+    double departure_rate;
     int flight_number;
 
     // TOTAL RESULT
@@ -51,11 +59,10 @@ private:
     int total_land_wait = 0;
     int total_takeoff_wait = 0;
     int total_idle_time = 0;
+    int total_planes_queued_land_remain = 0;
+    int total_planes_queued_takeoff_remain = 0;
 
-    double arrival_rate;
-    double departure_rate;
     void printRunwayResults();
-    void initialize(int &end_time, int &queue_limit, double &arrival_rate, double &departure_rate);
 };
 
 #endif // AIRPORT_H

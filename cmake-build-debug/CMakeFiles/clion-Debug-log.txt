@@ -1,16 +1,4 @@
 "/Users/LeMac/Library/Application Support/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/CLion 2024.1 EAP.app/Contents/bin/cmake/mac/x64/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/LeMac/Library/Application Support/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/CLion 2024.1 EAP.app/Contents/bin/ninja/mac/x64/ninja" -G Ninja -S /Users/LeMac/Code_projects/Git/GitHub/public/AirportSimulator -B /Users/LeMac/Code_projects/Git/GitHub/public/AirportSimulator/cmake-build-debug
--- The C compiler identification is AppleClang 15.0.0.15000309
--- The CXX compiler identification is AppleClang 15.0.0.15000309
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Configuring done (1.5s)
+-- Configuring done (0.1s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/LeMac/Code_projects/Git/GitHub/public/AirportSimulator/cmake-build-debug

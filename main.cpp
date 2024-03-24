@@ -10,25 +10,29 @@ int main() {
 
     while (true) {
         choice = displayMenu(); // Capture user's choice
-        if (choice == 0) {
+        if (choice == 6) {
             break; // Exit the loop if the user chooses to exit
         }
 
         Airport airport;
         switch (choice) {
         case 1:
+            airport.initialize(1);
             airport.airport_small();
             break;
         case 2:
+            airport.initialize(2);
             airport.airport_medium_fixed();
             break;
         case 3:
-            // Call the function for P3 version of the airport simulator
+            airport.initialize(3);
+            airport.airport_medium_flexible();
                 break;
         case 4:
-            // Call the function for P4 version of the airport simulator
+            airport.initialize(4);
+            airport.airport_large();
                 break;
-        case 5:
+        // case 5:
             // Call the function for P5 version of the airport simulator
                 break;
         }
@@ -49,11 +53,11 @@ int displayMenu() {
               << "2. Run P2 version of Airport simulator" << std::endl
               << "3. Run P3 version of Airport simulator" << std::endl
               << "4. Run P4 version of Airport simulator" << std::endl
-              << "5. Run P5 version of Airport simulator" << std::endl
-              << "0. Exit" << std::endl
+              // << "5. Run P5 version of Airport simulator" << std::endl
+              << "6. Exit" << std::endl
               << "Enter your choice: ";
 
-    while (!(std::cin >> choice) || (choice < 0 || choice > 5)) {
+    while (!(std::cin >> choice) || (choice < 0 || choice > 6)) {
         std::cout << "Invalid choice. Please enter a number between 0 and 5: ";
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

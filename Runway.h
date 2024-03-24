@@ -17,7 +17,9 @@ public:
    Error_code can_land(const Plane &current);
    Error_code can_depart(const Plane &current);
    Runway_activity activity(int time, Plane &moving);
-   void shut_down(const Runway& runway) const;
+
+   Queue landing_queue;
+   Queue takeoff_queue;
 
    // Methods to access statistics for landing operations
    int getNumLandRequests() const;
@@ -25,6 +27,7 @@ public:
    int getNumLandAccepted() const;
    int getNumLandRefused() const;
    int getLandWait() const;
+   int getQueueLandSize() const;
 
    // Methods to access statistics for takeoff operations
    int getNumTakeoffRequests() const;
@@ -32,6 +35,7 @@ public:
    int getNumTakeoffAccepted() const;
    int getNumTakeoffRefused() const;
    int getTakeoffWait() const;
+   int getQueueTakeoffSize() const;
 
    // Method to acces idle time
    int getIdleTime() const;
@@ -40,8 +44,6 @@ public:
    friend std::ostream& operator<<(std::ostream& os, const Runway& runway);
 
 private:
-   Queue landing_queue;
-   Queue takeoff_queue;
    int queue_limit;
 
    // Landing operation statistics
